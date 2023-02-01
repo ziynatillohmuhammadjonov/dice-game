@@ -9,7 +9,7 @@ const dice = document.querySelector(".dice");
 const playerOne = document.querySelector(".player--0");
 const playerTwo = document.querySelector(".player--1");
 
-let currentScore = [99, 0];
+let currentScore = [0, 0];
 let score = [0, 0];
 let winner = false;
 let activPlayer = 0;
@@ -42,10 +42,8 @@ btnHold.addEventListener("click", () => {
       document.querySelector(`#current--${activPlayer}`).textContent = 0;
       switPlayer();
       gameOwer();
-      console.log(score);
     }
   }
-  console.log(winner);
 });
 btnNew.addEventListener("click", () => {
   currentScore = [0, 0];
