@@ -55,12 +55,17 @@ btnNew.addEventListener("click", () => {
   dice.style.display = "none";
   document.querySelector(`#score--0`).textContent = 0;
   document.querySelector(`#score--1`).textContent = 0;
+  document.querySelector(`.player--0`).classList.remove("player--winner");
+  document.querySelector(`.player--1`).classList.remove("player--winner");
 });
 function gameOwer() {
-  score.forEach((item) => {
+  score.forEach((item, index) => {
     console.log(item);
     if (item >= 100) {
       winner = true;
+      document
+        .querySelector(`.player--${index}`)
+        .classList.add("player--winner");
     }
   });
 }
